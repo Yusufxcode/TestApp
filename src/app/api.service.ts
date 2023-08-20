@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'https://random-data-api.com/api/v2/users?size=10&is_json=true'
+  private apiUrl = 'https://random-data-api.com/api/v2/users?size=20&is_json=true'
 
   constructor(private http: HttpClient) { }
 

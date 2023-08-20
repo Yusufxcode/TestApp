@@ -7,7 +7,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./data-table.component.css']
 })
 export class DataTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'Phone_number'];
+  displayedColumns: string[] = ['id', 'first_name', 'email', 'phone_number'];
   dataSource: any[] = [];
   pageSize = 10;
   currentPage = 1;
@@ -21,8 +21,8 @@ export class DataTableComponent implements OnInit {
 
   loadData(): void {
     this.apiservice.getData(this.currentPage, this.pageSize).subscribe((data: any) => {
-      this.dataSource = data.totalItems;
-      this.totalItems = data.totalItems;
+      this.dataSource = data;
+      this.totalItems = data.length;
     });
   }
 
